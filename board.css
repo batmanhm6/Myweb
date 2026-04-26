@@ -1,0 +1,389 @@
+/* Board Styling - YouTube Style Overhaul */
+.board-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: rgba(2, 132, 199, 0.04);
+    padding: 1.5rem;
+    border-radius: 20px;
+    border: 1px solid rgba(2, 132, 199, 0.1);
+    margin-bottom: 2rem;
+}
+
+.board-item {
+    padding: 1.2rem 1.5rem;
+    position: relative;
+    transition: var(--transition);
+    border: none;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-body);
+}
+
+.board-item.target-highlight {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    box-shadow: 0 0 30px var(--primary-glow);
+    transform: scale(1.01);
+}
+
+.board-item-main {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+/* 아바타 스타일 */
+.post-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px; /* 살짝 각진 전문적인 느낌 */
+    background: var(--primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(2, 132, 199, 0.2);
+}
+
+.post-body {
+    flex-grow: 1;
+    min-width: 0;
+}
+
+.board-item-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.author-name {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    letter-spacing: -0.01em;
+}
+
+.post-date {
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    font-weight: 600;
+    opacity: 0.6;
+}
+
+.board-item-content {
+    font-family: var(--font-body);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    white-space: pre-wrap;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    word-break: break-word;
+    font-weight: 500;
+}
+
+/* 버튼 우측 배치 */
+.board-item-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.board-item-actions {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    width: 100%;
+}
+
+.btn-small {
+    padding: 5px 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    font-family: var(--font-body);
+    border-radius: 6px;
+    cursor: pointer;
+    background: rgba(148, 163, 184, 0.05);
+    border: 1px solid var(--glass-border);
+    color: var(--text-muted);
+    transition: var(--transition);
+}
+
+.btn-small:hover {
+    color: var(--primary);
+    background: #fff;
+    border-color: var(--primary);
+    transform: translateY(-1px);
+}
+
+.btn-delete:hover {
+    color: #ef4444;
+    border-color: #ef4444;
+}
+
+/* 답글 컨테이너 및 수직선 */
+.replies-container {
+    margin-left: 2.2rem;
+    border-left: 2px solid rgba(2, 132, 199, 0.12);
+    padding-left: 0.8rem;
+    display: none;
+    margin-top: 0.5rem;
+}
+
+.replies-container.show {
+    display: block;
+}
+
+.reply-toggle-btn {
+    background: none;
+    border: none;
+    color: var(--primary);
+    font-weight: 800;
+    font-size: 0.85rem;
+    cursor: pointer;
+    padding: 0.6rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-left: 4.2rem;
+    transition: var(--transition);
+}
+
+.reply-toggle-btn:hover {
+    opacity: 0.8;
+    transform: translateX(3px);
+}
+
+/* 입력폼 덮어쓰기 */
+.board-write {
+    margin-top: 2rem !important;
+    background: #ffffff !important;
+    border: 1px solid var(--glass-border) !important;
+    box-shadow: 0 10px 30px rgba(2, 132, 199, 0.05);
+}
+
+#board-content {
+    height: 120px !important;
+}
+
+.board-status {
+    background: rgba(2, 132, 199, 0.06);
+    padding: 0.8rem 1.2rem;
+    border-radius: 10px;
+    margin-bottom: 1.2rem;
+    font-size: 0.9rem;
+    color: var(--primary);
+    border-left: 4px solid var(--primary);
+    font-weight: 600;
+}
+
+/* --- [NEW] Professional Strengths Layout Overhaul --- */
+
+#competencies {
+    padding-top: 0 !important;
+}
+
+#competencies > .container {
+    margin-top: 100px !important; /* 상단 메뉴 높이 고려 충분한 여백 */
+    margin-bottom: 0 !important;
+    padding-top: 20px !important;
+}
+
+#competencies .section-title {
+    margin-bottom: 1.2rem !important; /* 제목과 자격증 사이 간격 최소화 */
+}
+
+.cert-badge-ribbon {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.8rem;
+    margin: 2.5rem 0 2rem 0;
+    perspective: 1000px;
+}
+
+.cert-badge {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-bottom: 2px solid var(--primary-glow); /* 하단 색상 통일 */
+    border-radius: 16px;
+    padding: 0.8rem;
+    text-align: center;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.cert-badge:hover {
+    transform: none; /* 애니메이션 제거 */
+    background: #fff;
+    box-shadow: 0 0 15px var(--primary-glow); /* 은은한 빛 효과 */
+}
+
+.cert-icon {
+    font-size: 1.6rem;
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.1));
+}
+
+.cert-name {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--text-main);
+    line-height: 1.3;
+}
+
+.cert-issuer {
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.board-sort-controls {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+}
+
+.sort-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: var(--transition);
+}
+
+.sort-btn.active {
+    color: var(--primary);
+    background: rgba(2, 132, 199, 0.08);
+}
+
+.sort-btn:hover:not(.active) {
+    color: var(--text-main);
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.btn-like {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 8px;
+    background: rgba(2, 132, 199, 0.04);
+    border: 1px solid rgba(2, 132, 199, 0.1);
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-right: auto; /* Push other buttons to the right */
+}
+
+.btn-like svg {
+    transition: transform 0.3s ease;
+}
+
+.btn-like.liked {
+    background: rgba(2, 132, 199, 0.1);
+    border-color: var(--primary);
+    color: var(--primary);
+    box-shadow: 0 0 15px var(--primary-glow);
+}
+
+.btn-like.liked svg {
+    fill: var(--primary);
+    stroke: var(--primary);
+    transform: scale(1.1);
+}
+
+.like-count {
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.btn-like:hover:not(.liked) {
+    color: var(--primary);
+    background: rgba(2, 132, 199, 0.08);
+    border-color: rgba(2, 132, 199, 0.3);
+    transform: translateY(-1px);
+}
+
+.btn-like:active {
+    transform: scale(0.95);
+}
+@media (max-width: 768px) {
+    .board-list {
+        padding: 1rem;
+        gap: 0.3rem;
+    }
+    
+    .board-item {
+        padding: 1rem 0.8rem;
+    }
+    
+    .board-item-main {
+        gap: 0.8rem;
+    }
+    
+    .post-avatar {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+    }
+    
+    .author-name {
+        font-size: 0.85rem;
+    }
+    
+    .post-date {
+        font-size: 0.6rem;
+    }
+    
+    .board-item-content {
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
+    
+    .reply-toggle-btn {
+        margin-left: 3rem;
+        font-size: 0.75rem;
+    }
+    
+    .replies-container {
+        margin-left: 1.2rem;
+        padding-left: 0.5rem;
+    }
+    
+    .board-sort-controls {
+        gap: 0.4rem;
+    }
+    
+    .sort-btn {
+        font-size: 0.75rem;
+        padding: 4px 8px;
+    }
+
+    .btn-like {
+        padding: 3px 8px;
+        font-size: 0.75rem;
+    }
+}
